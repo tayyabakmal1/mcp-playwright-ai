@@ -5,11 +5,15 @@ FROM node:20-alpine AS builder
 # Set the working directory
 WORKDIR /app
 
+# Copy package.json and package-lock.json
+COPY package.json package-lock.json ./
 
 # Install dependencies without running scripts to prevent automatic build
 RUN npm install --ignore-scripts
 
-
+# Copy the entire source directory
+COPY src ./src
+COPY tsconfig.json ./
 
 # Build the project
 RUN npm run build
