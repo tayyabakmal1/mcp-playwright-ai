@@ -8,8 +8,6 @@
   "bugs": "",
   "types": "dist/index.d.ts",
   "type": "module",
-  "main": "dist/index.js",
-  "module": "src/index.ts",
   "bin": {
     "playwright-mcp": "dist/index.js"
   },
