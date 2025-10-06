@@ -8,9 +8,9 @@
   "bugs": "",
   "types": "dist/index.d.ts",
   "type": "module",
-  "bin": {
-    "playwright-mcp": "dist/index.js"
-  },
+  "main": "dist/index.js",
+  "module": "./src/index.ts",
+
   "files": [
     "dist"
   ],
