@@ -7,6 +7,8 @@
   "homepage": "https://github.com/tayyabakmal1/mcp-playwright-ai",
   "bugs": "https://github.com/executeautomation/mcp-playwright/issues",
   "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "module": "src/index.ts",
   "type": "module",
   "bin": {
     "playwright-mcp": "dist/index.js"
