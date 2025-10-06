@@ -1,4 +1,9 @@
 # Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+runtime: typescript
+entry: src/index.ts
+
+
+# dist/index.js
 
 startCommand:
   type: stdio
@@ -9,6 +14,3 @@ startCommand:
   commandFunction:
     # A function that produces the CLI command to start the MCP on stdio.
     |-
-    (config) => ({command: 'node', args: ['dist/index.js'], env: {}})
-
-    
