@@ -4,7 +4,7 @@ entry: dist/index.js
 
 startCommand:
   type: stdio
-  configSchema:
+  configSchema:sss
     # JSON Schema defining the configuration options for the MCP.
     type: object
     properties: {}
