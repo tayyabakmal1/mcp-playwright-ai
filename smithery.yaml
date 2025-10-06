@@ -1,6 +1,6 @@
 # Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
 runtime: typescript
-entry: src/index.ts
+entry: dist/index.js
 
 
 # dist/index.js
