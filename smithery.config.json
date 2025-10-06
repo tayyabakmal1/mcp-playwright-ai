@@ -1,0 +1,8 @@
+{
+  "runtime": "typescript",
+  "entry": "src/index.ts",
+  "startCommand": {
+    "type": "http",
+    "commandFunction": "start"
+  }
+}
