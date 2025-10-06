@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "",
   "homepage": "https://github.com/tayyabakmal1/mcp-playwright-ai",
-  "bugs": "https://github.com/tayyabakmal1/mcp-playwright-ai/issues",
+  "bugs": "https://github.com/executeautomation/mcp-playwright/issues",
   "types": "dist/index.d.ts",
   "type": "module",
   "bin": {
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/executeautomation/mcp-playwright.git"
+    "url": "git+https://github.com/tayyabakmal1/mcp-playwright-ai.git"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.11.1",

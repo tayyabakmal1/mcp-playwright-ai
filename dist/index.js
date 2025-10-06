@@ -6,7 +6,7 @@ import { setupRequestHandlers } from "./requestHandler.js";
 async function runServer() {
     const server = new Server({
         name: "playwright-mcp",
-        version: "1.0.6",
+        version: "1.0.0",
     }, {
         capabilities: {
             resources: {},
