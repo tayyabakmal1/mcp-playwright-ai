@@ -6,7 +6,8 @@ startCommand:
     # JSON Schema defining the configuration options for the MCP.
     type: object
     properties: {}
-  commandFunction:
-    # A function that produces the CLI command to start the MCP on stdio.
-    |-
-    (config) => ({command: 'node', args: ['dist/index.js'], env: {}})
+  # Direct command specification for Smithery (preferred over inline functions)
+  command: node
+  args:
+    - dist/index.js
+  env: {}
