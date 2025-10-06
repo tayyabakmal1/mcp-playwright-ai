@@ -4,11 +4,12 @@ entry: dist/index.js
 
 startCommand:
   type: stdio
-  configSchema:sss
+  configSchema:
     # JSON Schema defining the configuration options for the MCP.
     type: object
+    additionalProperties: false
     properties: {}
   commandFunction:
     # A function that produces the CLI command to start the MCP on stdio.
     |-
-    (config) => ({command: 'node', args: ['dist/index.js'], env: {}})
+    (config) => ({ command: 'node', args: ['dist/index.js'], env: {} })
