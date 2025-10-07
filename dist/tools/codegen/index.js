@@ -9,7 +9,9 @@ const getWorkspaceRoot = () => {
 const DEFAULT_OPTIONS = {
     outputPath: path.join(getWorkspaceRoot(), 'e2e'),
     testNamePrefix: 'Test',
-    includeComments: true
+    includeComments: true,
+    language: 'typescript',
+    template: 'plain'
 };
 export const startCodegenSession = {
     name: 'start_codegen_session',
@@ -23,7 +25,9 @@ export const startCodegenSession = {
                 properties: {
                     outputPath: { type: 'string' },
                     testNamePrefix: { type: 'string' },
-                    includeComments: { type: 'boolean' }
+                    includeComments: { type: 'boolean' },
+                    language: { type: 'string', enum: ['typescript', 'javascript'] },
+                    template: { type: 'string', enum: ['plain', 'pom'] }
                 }
             }
         }
@@ -91,12 +95,19 @@ export const endCodegenSession = {
             // Double check output directory exists
             const outputDir = path.dirname(result.filePath);
             await fs.mkdir(outputDir, { recursive: true });
-            // Write test file
+            // Write test file and any additional generated files (POM/config)
             try {
                 await fs.writeFile(result.filePath, result.testCode, 'utf-8');
+                if (result.files && result.files.length) {
+                    for (const f of result.files) {
+                        const dir = path.dirname(f.path);
+                        await fs.mkdir(dir, { recursive: true });
+                        await fs.writeFile(f.path, f.content, 'utf-8');
+                    }
+                }
             }
             catch (writeError) {
-                throw new Error(`Failed to write test file: ${writeError.message}`);
+                throw new Error(`Failed to write generated files: ${writeError.message}`);
             }
             // Close Playwright browser and cleanup
             try {

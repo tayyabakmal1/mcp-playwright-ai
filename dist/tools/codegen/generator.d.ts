@@ -17,5 +17,9 @@ export declare class PlaywrightGenerator {
     private generateSelectStep;
     private generateCustomUserAgentStep;
     private generateTestCode;
+    private generatePomTestCode;
+    private generatePageObject;
+    private generatePlaywrightConfig;
+    private deriveLocatorName;
     private getOutputFilePath;
 }

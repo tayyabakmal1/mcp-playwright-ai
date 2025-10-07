@@ -25,6 +25,16 @@ export function createToolDefinitions() {
               includeComments: { 
                 type: "boolean", 
                 description: "Whether to include descriptive comments in generated tests" 
+              },
+              language: {
+                type: "string",
+                description: "Programming language for generated tests (default: 'typescript')",
+                enum: ["typescript", "javascript"]
+              },
+              template: {
+                type: "string",
+                description: "Test generation template/style (e.g., 'plain' or 'pom' for Page Object Model)",
+                enum: ["plain", "pom"]
               }
             },
             required: ["outputPath"]

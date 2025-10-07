@@ -20,6 +20,16 @@ export declare function createToolDefinitions(): [{
                         readonly type: "boolean";
                         readonly description: "Whether to include descriptive comments in generated tests";
                     };
+                    readonly language: {
+                        readonly type: "string";
+                        readonly description: "Programming language for generated tests (default: 'typescript')";
+                        readonly enum: readonly ["typescript", "javascript"];
+                    };
+                    readonly template: {
+                        readonly type: "string";
+                        readonly description: "Test generation template/style (e.g., 'plain' or 'pom' for Page Object Model)";
+                        readonly enum: readonly ["plain", "pom"];
+                    };
                 };
                 readonly required: readonly ["outputPath"];
             };

@@ -25,10 +25,14 @@ export interface CodegenOptions {
   outputPath?: string;
   testNamePrefix?: string;
   includeComments?: boolean;
+  language?: 'typescript' | 'javascript';
+  template?: 'plain' | 'pom';
 }
 
 export interface CodegenResult {
   testCode: string;
   filePath: string;
   sessionId: string;
+  // Optional additional files to generate (e.g., Page Object, config)
+  files?: { path: string; content: string }[];
 } 
